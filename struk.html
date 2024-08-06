@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Struk</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h2>TARUNIRMALA</h2>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produk.html">Produk</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                    <li><a href="tentang.html">Tentang</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="content invoice">
+            <h2>Struk</h2>
+            <p><strong>Nama:</strong> <span id="invoiceName"></span></p>
+            <p><strong>Email:</strong> <span id="invoiceEmail"></span></p>
+            <p><strong>Produk:</strong> <span id="invoiceProduct"></span></p>
+            <p><strong>Jumlah:</strong> <span id="invoiceQuantity"></span></p>
+            <p><strong>Total:</strong> Rp. <span id="invoiceTotal"></span></p>
+            <p>Terima kasih telah berbelanja di TARUNIRMALA!!</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 TARUNIRMALA. All Rights Reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get data from local storage
+            const name = localStorage.getItem('name');
+            const email = localStorage.getItem('email');
+            const product = localStorage.getItem('product');
+            const quantity = localStorage.getItem('quantity');
+            const total = localStorage.getItem('total');
+
+            // Update the invoice with the data
+            document.getElementById('invoiceName').textContent = name;
+            document.getElementById('invoiceEmail').textContent = email;
+            document.getElementById('invoiceProduct').textContent = product;
+            document.getElementById('invoiceQuantity').textContent = quantity;
+            document.getElementById('invoiceTotal').textContent = total;
+
+            // Clear local storage
+            localStorage.clear();
+        });
+    </script>
+</body>
+</html>
